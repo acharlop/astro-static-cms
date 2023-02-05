@@ -1,4 +1,4 @@
-import { InitCmsOptions } from './types';
+import { InitCmsOptions } from './types'
 
 export default function initCMS({
   cms,
@@ -8,9 +8,10 @@ export default function initCMS({
   // Provide default values given we can make a reasonable guess
   const mediaDefaults = !config.media_folder
     ? { media_folder: 'public', public_folder: '/' }
-    : {};
+    : {}
 
-  cms.init({
+  // @ts-ignore
+  window.CMS.init({
     config: {
       // Don’t try to load config.yml as we’re providing the config below
       load_config_file: false,
@@ -19,7 +20,7 @@ export default function initCMS({
       ...mediaDefaults,
       ...config,
     },
-  });
+  })
 
   /**
    * One drawback of using Netlify CMS is that it registers all preview
@@ -32,5 +33,5 @@ export default function initCMS({
    */
   previewStyles.forEach(([style, opts]) =>
     cms.registerPreviewStyle(style, opts)
-  );
+  )
 }

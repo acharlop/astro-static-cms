@@ -1,17 +1,17 @@
-import type { ReactNode } from 'react';
-import Author from '../../components/Author';
-import { FrontMatterSetup } from '../../components';
-import { CMSCollection } from '../types';
-import css from './posts.css';
+import React from 'react'
+import type { ReactNode } from 'react'
+import Author from '../../components/Author'
+import { CMSCollection } from '../types'
+import css from './posts.css'
 
 interface Props {
-  title: string;
-  author: string;
-  authorURL: string;
-  publishDate: string;
-  heroImage: string;
-  alt: string;
-  children: ReactNode;
+  title: string
+  author: string
+  authorURL: string
+  publishDate: string
+  heroImage: string
+  alt: string
+  children: ReactNode
 }
 
 export function Post({
@@ -24,29 +24,29 @@ export function Post({
   children,
 }: Props) {
   return (
-    <div className="blog-post">
-      <article className="content">
+    <div className='blog-post'>
+      <article className='content'>
         <div>
           <header>
             {heroImage && (
               <img
-                width="720"
-                height="420"
-                className="hero-image"
-                loading="lazy"
+                width='720'
+                height='420'
+                className='hero-image'
+                loading='lazy'
                 src={heroImage}
                 alt={alt}
               />
             )}
-            <p className="publish-date">{publishDate}</p>
-            <h1 className="title">{title}</h1>
+            <p className='publish-date'>{publishDate}</p>
+            <h1 className='title'>{title}</h1>
             <Author name={author} href={authorURL} />
           </header>
           <main>{children}</main>
         </div>
       </article>
     </div>
-  );
+  )
 }
 
 const collection: CMSCollection<Props> = {
@@ -65,8 +65,8 @@ const collection: CMSCollection<Props> = {
     {
       name: 'publishDate',
       widget: 'datetime',
-      format: 'DD MMM YYYY',
-      date_format: 'DD MMM YYYY',
+      format: 'dd MMM yyyy',
+      date_format: 'dd MMM yyyy',
       time_format: false,
       label: 'Publish Date',
     },
@@ -105,13 +105,13 @@ const collection: CMSCollection<Props> = {
     // This is hidden here assuming a non-technical user will not need to
     // see or edit the `setup` front matter. You could also use a `code`
     // widget if you wanted direct access to editing the `setup` for each post.
-    {
-      name: 'setup',
-      widget: 'hidden',
-      default: `import Layout from '../../layouts/BlogPost.astro';
-${FrontMatterSetup}`,
-    },
+    //     {
+    //       name: 'setup',
+    //       widget: 'hidden',
+    //       default: `import Layout from '../../layouts/BlogPost.astro';
+    // ${FrontMatterSetup}`,
+    // },
   ],
-};
+}
 
-export default { component: Post, css, collection };
+export default { component: Post, css, collection }

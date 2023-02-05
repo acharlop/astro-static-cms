@@ -2,13 +2,13 @@
 // https://docs.astro.build/reference/configuration-reference
 
 // @ts-check
-import { defineConfig } from 'astro/config';
-import NetlifyCMS from 'astro-netlify-cms';
+import { defineConfig } from 'astro/config'
+import StaticCMS from 'astro-static-cms'
 
 export default defineConfig({
   integrations: [
     // Enable Netlify CMS integration.
-    NetlifyCMS({
+    StaticCMS({
       previewStyles: [
         'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap',
         '/src/styles/blog.css',
@@ -40,8 +40,8 @@ export default defineConfig({
               {
                 name: 'publishDate',
                 widget: 'datetime',
-                format: 'DD MMM YYYY',
-                date_format: 'DD MMM YYYY',
+                format: 'dd MMM yyyy',
+                date_format: 'dd MMM yyyy',
                 time_format: false,
                 label: 'Publish Date',
               },
@@ -92,4 +92,4 @@ export default defineConfig({
       },
     }),
   ],
-});
+})

@@ -1,14 +1,16 @@
-![Astro + Netlify CMS](header.png)
+![Astro + StaticCMS](header.png)
+
+This is a basic POC migrating the codebase from [astro-netlify-cms](https://github.com/delucis/astro-netlify-cms) to use StaticCMS
 
 <p align="center">
-Add <a href="https://www.netlifycms.org/">Netlify CMS</a>’s admin dashboard
+Add <a href="https://www.staticcms.org/">Static CMS</a>’s admin dashboard
 to any <a href="https://astro.build/">Astro</a> project
 </p>
 
 ## Installation
 
 ```bash
-npm i astro-netlify-cms
+npm i astro-static-cms
 ```
 
 ## What is this?
@@ -25,7 +27,7 @@ Adding the integration will:
 
 Usually each of these requires individual set up and configuration. Using this integration, you configure your CMS once in `astro.config.mjs`, sit back, and enjoy!
 
-> Looking for a quick way to get started? [Try out the Blog Starter with Netlify CMS →](https://github.com/delucis/astro-netlify-cms-starter)
+> Looking for a quick way to get started? [Try out the Blog Starter with Netlify CMS →](https://github.com/acharlop/astro-static-cms-starter)
 
 ## Usage
 
@@ -37,8 +39,8 @@ Astro config file, adding it to the `integrations` array.
 ```js
 // astro.config.mjs
 
-import { defineConfig } from 'astro/config';
-import NetlifyCMS from 'astro-netlify-cms';
+import { defineConfig } from 'astro/config'
+import NetlifyCMS from 'astro-netlify-cms'
 
 export default defineConfig({
   integrations: [
@@ -54,7 +56,7 @@ export default defineConfig({
       },
     }),
   ],
-});
+})
 ```
 
 ### Configuration options
@@ -123,7 +125,7 @@ previewStyles: [
   'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap',
   // Raw CSS!
   ['p { color: red; }', { raw: true }],
-];
+]
 ```
 
 #### `disableIdentityWidgetInjection`

@@ -136,8 +136,8 @@ _See `src/components/Author.tsx` for an example._
    `src/components/index.ts`.
 
 [starter]: https://astro.new/blog?on=github
-[cms]: https://www.netlifycms.org/
-[proxy]: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+[cms]: https://www.staticcms.org/
+[proxy]: https://www.staticcms.org/docs/local-backend
 [deploy]: https://app.netlify.com/start/deploy?repository=https://github.com/delucis/astro-netlify-cms
 [identity]: https://docs.netlify.com/visitor-access/identity/
 [gateway]: https://docs.netlify.com/visitor-access/git-gateway/
