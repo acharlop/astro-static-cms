@@ -33,7 +33,11 @@
     "netlify-identity-widget": "^1.9.2"
   },
   "peerDependencies": {
-    "astro": "^2.0.0"
+    "@staticcms/app": "^1.2.6",
+    "@staticcms/core": "^1.2.6",
+    "@staticcms/proxy-server": "^2.0.0",
+    "astro": "^2.0.0",
+    "netlify-identity-widget": "^1.9.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
